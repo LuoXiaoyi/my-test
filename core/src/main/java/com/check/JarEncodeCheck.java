@@ -8,7 +8,7 @@ import java.util.jar.JarFile;
 /**
  * @author xiluo
  * @ClassName
- * @description TODO
+ * @description 用于检验相关的 class 文件是否合法，在我们内部就是检查 class 文件是否加密
  * @date 2020/3/26 13:03
  * @Version 1.0
  **/
@@ -66,7 +66,7 @@ public class JarEncodeCheck {
                     // 小端
                     a = getIntL(magic);
                     if (a != 0xcafababe) {
-                        System.err.println("invalid jar file :  " + f.getAbsolutePath() + ", class name: " + entityName);
+                        System.err.println("ERROR ---> invalid jar file:  " + f.getAbsolutePath() + ", class name: " + entityName);
                     }
                 }
                 in.close();
