@@ -1,4 +1,4 @@
-package com.healthcenter.model;
+package com.healthcenter.model.os;
 
 import java.util.Set;
 
