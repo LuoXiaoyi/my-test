@@ -1,3 +1,0 @@
-JMH S 13 com.jmh.First S 43 com.jmh.generated.First_runCalendar_jmhTest S 11 runCalendar S 11 AverageTime I 1 5 A 1 1 1 E E E E E E E E E E E E E E U 11 NANOSECONDS E E 
-JMH S 13 com.jmh.First S 39 com.jmh.generated.First_runJoda_jmhTest S 7 runJoda S 11 AverageTime I 1 5 A 1 1 1 E E E E E E E E E E E E E E U 11 NANOSECONDS E E 
-JMH S 13 com.jmh.First S 41 com.jmh.generated.First_runSystem_jmhTest S 9 runSystem S 11 AverageTime I 1 5 A 1 1 1 E E E E E E E E E E E E E E U 11 NANOSECONDS E E 

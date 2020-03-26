@@ -1,0 +1,25 @@
+*/*.iml
+/*.ipr
+/*.iws
+/.classpath
+/.factorypath
+/.idea
+/.project
+/.settings
+/nb*
+/release.properties
+/target
+*/target
+*.iml
+# These are needed if running in IDE without properties set
+/ibderby
+derby.log
+/bin/
+*.zip
+*/*.so*
+*/*.dylib
+/deploy/dlibs/*
+*.dylib
+*.jar
+*.gz
+*.DS_Store

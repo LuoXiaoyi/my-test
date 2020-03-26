@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="attach-macos-openj9">
-    <CLASSES>
-      <root url="jar://$USER_HOME$/attach-libs/attach-macos-openj9.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
