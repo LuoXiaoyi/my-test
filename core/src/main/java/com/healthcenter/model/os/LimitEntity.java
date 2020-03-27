@@ -4,8 +4,6 @@ import java.io.Serializable;
 
 /**
  * @author xiluo
- * @ClassName
- * @description TODO
  * @date 2020/3/25 22:44
  * @Version 1.0
  **/

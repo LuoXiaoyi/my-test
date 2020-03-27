@@ -2,8 +2,6 @@ package com.healthcenter.model.os;
 
 /**
  * @author xiluo
- * @ClassName
- * @description TODO
  * @date 2020/3/25 22:45
  * @Version 1.0
  **/

@@ -1,6 +1,7 @@
 package com.mxbean;
 
 import sun.management.VMManagement;
+import sun.misc.Perf;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
@@ -43,7 +44,7 @@ public class MXBeanTest {
                     ie.printStackTrace();
                 }
             }
-        });//.start();
+        }).start();
 
         new Thread(() -> {
             while (true) {
