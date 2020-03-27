@@ -1,5 +1,7 @@
 package com.healthcenter.model.os;
 
+import java.io.Serializable;
+
 /**
  * @author xiluo
  * @ClassName
@@ -7,7 +9,8 @@ package com.healthcenter.model.os;
  * @date 2020/3/25 18:26
  * @Version 1.0
  **/
-public class ProcessLimit {
+public class ProcessLimit implements Serializable {
+    private static final long serialVersionUID = 9555563969891481L;
     private LimitEntity maxCpuTimeLimit;
     private LimitEntity maxFileSize;
     private LimitEntity maxDataSize;

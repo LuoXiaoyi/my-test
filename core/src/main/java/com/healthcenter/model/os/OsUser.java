@@ -1,5 +1,6 @@
 package com.healthcenter.model.os;
 
+import java.io.Serializable;
 import java.util.Set;
 
 /**
@@ -9,7 +10,8 @@ import java.util.Set;
  * @date 2020/3/25 18:26
  * @Version 1.0
  **/
-public class OsUser {
+public class OsUser implements Serializable {
+    private static final long serialVersionUID = 47480081032025857L;
     private int id;
     private String name;
     private UserGroup mainGroup;

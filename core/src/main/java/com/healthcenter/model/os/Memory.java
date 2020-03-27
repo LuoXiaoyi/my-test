@@ -1,5 +1,7 @@
 package com.healthcenter.model.os;
 
+import java.io.Serializable;
+
 /**
  * @author xiluo
  * @ClassName
@@ -7,7 +9,8 @@ package com.healthcenter.model.os;
  * @date 2020/3/25 18:24
  * @Version 1.0
  **/
-public class Memory {
+public class Memory implements Serializable {
+    private static final long serialVersionUID = 2312075028506474399L;
     /**
      * Total usable RAM (i.e. physical RAM minus a few reserved bits and the kernel binary code).
      */

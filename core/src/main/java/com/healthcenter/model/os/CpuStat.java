@@ -1,5 +1,7 @@
 package com.healthcenter.model.os;
 
+import java.io.Serializable;
+
 /**
  * kernel/system statistics.  Varies with architecture.  Common
  * entries include:
@@ -16,7 +18,8 @@ package com.healthcenter.model.os;
  * @author xiaoyiluo
  * @createTime 2020/3/26 18:54
  **/
-public class CpuStat {
+public class CpuStat implements Serializable {
+    private static final long serialVersionUID = 3548249612117036685L;
 
     /**
      * user  (1) Time spent in user mode.

@@ -1,5 +1,7 @@
 package com.healthcenter.model.os;
 
+import java.io.Serializable;
+
 /**
  * @author xiluo
  * @ClassName
@@ -28,7 +30,8 @@ package com.healthcenter.model.os;
  * @date 2020/3/26 20:14
  * @Version 1.0
  **/
-public class UpTime {
+public class UpTime implements Serializable {
+    private static final long serialVersionUID = -3739814886042574800L;
     private long currentMs;
     private long uptimeSecs;
 

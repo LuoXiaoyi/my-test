@@ -1,5 +1,7 @@
 package com.healthcenter.model.os;
 
+import java.io.Serializable;
+
 /**
  * @author xiluo
  * @ClassName
@@ -75,7 +77,8 @@ package com.healthcenter.model.os;
  * @date 2020/3/26 19:28
  * @Version 1.0
  **/
-public class DiskState {
+public class DiskState implements Serializable {
+    private static final long serialVersionUID = -5772252648069651068L;
     private long totalCompletedReadNbr;
     private long totalCompletedWriteNbr;
 

@@ -1,13 +1,15 @@
 package com.healthcenter.model.os;
 
+import java.io.Serializable;
+
 /**
  * @author xiluo
- * @ClassName
  * @description 参考 df 的实现
  * @date 2020/3/25 18:24
  * @Version 1.0
  **/
-public class Disk {
+public class Disk implements Serializable {
+    private static final long serialVersionUID = -6428477780196461198L;
     private String fileSystem;
     private long size;
     private long used;

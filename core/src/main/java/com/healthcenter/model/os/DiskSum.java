@@ -1,5 +1,6 @@
 package com.healthcenter.model.os;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -9,7 +10,8 @@ import java.util.List;
  * @date 2020/3/26 18:54
  * @Version 1.0
  **/
-public class DiskSum {
+public class DiskSum  implements Serializable {
+    private static final long serialVersionUID = -262466834180548815L;
     private double tps;
     private double readBytesPerSec;
     private double writeBytesPerSec;

@@ -1,5 +1,7 @@
 package com.healthcenter.model.os;
 
+import java.io.Serializable;
+
 /**
  * @author xiluo
  * @ClassName
@@ -7,7 +9,8 @@ package com.healthcenter.model.os;
  * @date 2020/3/25 22:44
  * @Version 1.0
  **/
-public class LimitEntity {
+public class LimitEntity implements Serializable {
+    private static final long serialVersionUID = 3270501543655968667L;
     private long softLimit;
     private long hardLimit;
     private LimitUnit unit;
