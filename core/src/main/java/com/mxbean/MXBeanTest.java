@@ -49,11 +49,11 @@ public class MXBeanTest {
         new Thread(() -> {
             while (true) {
                 gcMxBeanTest();
-                heapMxBeanTest();
+                /*heapMxBeanTest();
                 threadMxBeanTest();
                 runtimeMxBeanTest();
                 memoryMxBeanTest();
-                operatingSystemTest();
+                operatingSystemTest();*/
                 System.out.println("################################################");
                 try {
                     Thread.sleep(3000);
@@ -191,8 +191,16 @@ public class MXBeanTest {
                 for (String name : gcBean.getMemoryPoolNames()) {
                     System.out.print(name + "\t");
                 }
-                System.out.println();
             }
+
+            // get GCInfo
+            if (gcBean instanceof com.sun.management.GarbageCollectorMXBean) {
+                com.sun.management.GarbageCollectorMXBean sunGcBean
+                        = com.sun.management.GarbageCollectorMXBean.class.cast(gcBean);
+                System.out.println("GcInfo: " + sunGcBean.getLastGcInfo());
+            }
+
+            System.out.println();
         }
     }
 

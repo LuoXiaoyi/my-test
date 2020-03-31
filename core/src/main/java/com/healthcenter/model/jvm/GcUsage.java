@@ -7,6 +7,11 @@ package com.healthcenter.model.jvm;
  **/
 public class GcUsage {
     /**
+     * jvm instance uptime, second
+     */
+    private long jvmUptime;
+
+    /**
      * sun.gc.generation.0.space.1.capacity
      */
     private long s0Capacity;
@@ -95,7 +100,7 @@ public class GcUsage {
     private float totalGcTime;
 
     /**
-     *  sun.gc.lastCause
+     * sun.gc.lastCause
      */
     private String lastGcCause;
 
@@ -103,6 +108,14 @@ public class GcUsage {
      * Current GC Cause
      */
     private String currentGcCause;
+
+    public long getJvmUptime() {
+        return jvmUptime;
+    }
+
+    public void setJvmUptime(long jvmUptime) {
+        this.jvmUptime = jvmUptime;
+    }
 
     public long getS0Capacity() {
         return s0Capacity;
