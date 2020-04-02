@@ -1,7 +1,6 @@
 package com.mxbean;
 
 import sun.management.VMManagement;
-import sun.misc.Perf;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;

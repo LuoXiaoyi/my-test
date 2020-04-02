@@ -6,6 +6,9 @@ import java.util.List;
 /**
  * @author xiluo
  * @date 2020/3/26 18:54
+ * <pre>
+ *     这个对象的值来自对 DiskState 的统计、计算和 Disk 指标的组合
+ * </pre>
  * @Version 1.0
  **/
 public class DiskSum  implements Serializable {

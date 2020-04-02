@@ -1,5 +1,6 @@
 package com.healthcenter.test;
 
+import java.lang.reflect.Method;
 import java.nio.file.FileStore;
 import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
@@ -8,8 +9,6 @@ import java.util.List;
 
 /**
  * @author xiluo
- * @ClassName
- * @description TODO
  * @date 2020/3/26 18:51
  * @Version 1.0
  **/
@@ -17,18 +16,28 @@ public class DiskTest {
     static long MB = 1024 * 1024;
     static long GB = 1024 * MB;
     public static void main(String[] args) throws Exception {
-        List<FileSystemProvider> fsProviders = FileSystemProvider.installedProviders();
-        System.out.println(fsProviders.size());
-        for (FileSystemProvider fsProvider : fsProviders) {
-        }
+        Iterable<FileStore> fileStores = FileSystems.getDefault().getFileStores();
+        for (FileStore fileStore : fileStores) {
+            System.out.println("fs name: " + fileStore.name());
 
-        FileSystem fs = FileSystems.getDefault();
-        Iterable<FileStore> stores = fs.getFileStores();
-        for (FileStore store : stores) {
-            System.out.println("---------------------------- ---------------------------- ");
-            System.out.println("name: " + store.name() + ", type: " + store.type());
-            System.out.println("total: " + store.getTotalSpace() / GB + " G");
-            System.out.println("usable: " + store.getUsableSpace() / GB + " G");
+            Class<?> ufsClz = Class.forName("sun.nio.fs.UnixFileStore");
+            if (ufsClz.isAssignableFrom(fileStore.getClass())) {
+                Method entry = ufsClz.getDeclaredMethod("entry");
+                entry.setAccessible(true);
+                Object eObj = entry.invoke(fileStore);
+                Method dir = eObj.getClass().getDeclaredMethod("dir");
+                dir.setAccessible(true);
+                byte[] dirBytes = (byte[]) dir.invoke(eObj);
+                if(dirBytes != null){
+                    System.out.println("mounted on: " + new String(dirBytes));
+                }
+            }
+
+            System.out.println("fs type: " + fileStore.type());
+            System.out.println("fs total space: " + fileStore.getTotalSpace());
+            System.out.println("fs unused space: " + fileStore.getUsableSpace());
+            System.out.println("fs unallocated space: " + fileStore.getUnallocatedSpace());
+            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         }
     }
 }
