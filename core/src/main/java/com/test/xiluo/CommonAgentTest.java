@@ -1,4 +1,4 @@
-package com.test.perfma;
+package com.test.xiluo;
 
 import com.sun.tools.attach.VirtualMachine;
 import com.sun.tools.attach.VirtualMachineDescriptor;

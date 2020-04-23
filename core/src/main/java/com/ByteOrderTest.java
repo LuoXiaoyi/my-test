@@ -1,6 +1,12 @@
 package com;
 
+import sun.nio.ch.DirectBuffer;
+import sun.nio.ch.FileChannelImpl;
+
 import java.io.*;
+import java.nio.ByteBuffer;
+import java.nio.MappedByteBuffer;
+import java.nio.channels.FileChannel;
 
 /**
  * test
@@ -23,6 +29,10 @@ public class ByteOrderTest {
         dos.writeInt(a);
         dos.writeLong(b);
         dos.close();*/
+
+        ByteBuffer.allocateDirect(1024);
+        MappedByteBuffer.allocateDirect(1024);
+
     }
 
 }
