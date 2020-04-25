@@ -27,7 +27,7 @@ codec:
 referenceCodecProvider:
   class: org.redisson.codec.DefaultReferenceCodecProvider
 referenceEnabled: true
-transportMode: "NIO"
+transportMode: "NIO.jpg"
 lockWatchdogTimeout: 30000
 keepPubSubOrder: true
 useScriptCache: false
