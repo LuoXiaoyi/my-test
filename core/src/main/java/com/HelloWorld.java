@@ -1,6 +1,9 @@
 package com;
 
+import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -14,10 +17,47 @@ import java.util.concurrent.ConcurrentHashMap;
 public class HelloWorld {
 
     public static void main(String[] args) throws Exception {
-        testMap();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmssSSS");
+        System.out.println(sdf.format(new Date(System.currentTimeMillis())));
+        //testString();
+
+        /*Thread t = new Thread(() -> {
+            while (true) {
+                try {
+                    Thread.sleep(10000);
+                } catch (InterruptedException ie) {
+                    System.out.println("in: " + Thread.currentThread().isInterrupted());
+                }
+            }
+        });
+        t.start();
+
+        Thread.sleep(1000);
+        System.out.println("begin to interrupt t");
+        t.interrupt();
+        System.out.println("out: " + t.isInterrupted());
+
+        Thread.sleep(2000);
+        t.interrupt();
+        System.out.println("out: " + t.isInterrupted());
+
+        t.join();*/
+        //testMap();
     }
 
-    static void testMap() throws Exception{
+    static void testString() {
+        String fp = "abc:123:3434:9034";
+        int beginIdx = 0, length = fp.length();
+        for (int i = 0; i < length; ++i) {
+            if (fp.charAt(i) == ':' || i == length - 1) {
+                System.out.println(fp.substring(beginIdx, i == length - 1 ? i + 1 : i));
+                // 指向 ':' 的后一个字符
+                beginIdx = i + 1;
+            }
+        }
+    }
+
+    static void testMap() throws Exception {
 
         Map<String, String> test = new ConcurrentHashMap<>();
 
@@ -27,14 +67,14 @@ public class HelloWorld {
 
         Thread[] threads = new Thread[4];
         for (int j = 0; j < 4; j++) {
-           threads[j] = new Thread(() -> {
+            threads[j] = new Thread(() -> {
                 Iterator<Map.Entry<String, String>> iter = test.entrySet().iterator();
                 while (iter.hasNext()) {
                     test.remove(iter.next().getKey());
                 }
             });
 
-           threads[j].start();
+            threads[j].start();
         }
 
         threads[0].join();
